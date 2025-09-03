@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { UserPredictions, Game } from '@/types';
+import { Game } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,7 +15,6 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { X, Calendar, Trophy } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { formatGameTime } from '@/lib/date-utils';
 import { dataProvider } from '@/data/data-provider';
 import { usePredictions } from '@/hooks/use-predictions';

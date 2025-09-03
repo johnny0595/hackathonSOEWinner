@@ -49,10 +49,17 @@ export function SportsHeader({
           NC State Sports Today
         </h1>
         <ScrollArea className="w-full">
-          <div className="flex gap-2 pb-2">
+          <div 
+            className="flex gap-2 pb-2" 
+            role="tablist" 
+            aria-label="Sports selection"
+          >
             {sports.map((sport) => (
               <Button
                 key={sport.id}
+                role="tab"
+                aria-selected={selectedSport?.id === sport.id}
+                aria-controls={`games-for-${sport.id}`}
                 variant={selectedSport?.id === sport.id ? 'default' : 'outline'}
                 onClick={() => onSportSelect(sport)}
                 className={cn(

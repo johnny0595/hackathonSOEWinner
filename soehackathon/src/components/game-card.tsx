@@ -55,6 +55,8 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
               variant={prediction?.predictedWinnerId === team1.id ? 'default' : 'outline'}
               size="sm"
               onClick={() => onPredict(team1.id)}
+              aria-label={`Predict ${team1.name} to win ${game.division} game`}
+              aria-pressed={prediction?.predictedWinnerId === team1.id}
               className={cn(
                 'w-full',
                 prediction?.predictedWinnerId === team1.id &&
@@ -90,6 +92,8 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
               variant={prediction?.predictedWinnerId === team2.id ? 'default' : 'outline'}
               size="sm"
               onClick={() => onPredict(team2.id)}
+              aria-label={`Predict ${team2.name} to win ${game.division} game`}
+              aria-pressed={prediction?.predictedWinnerId === team2.id}
               className={cn(
                 'w-full',
                 prediction?.predictedWinnerId === team2.id &&

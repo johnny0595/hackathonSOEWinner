@@ -66,7 +66,12 @@ export function GamesList({ games, isLoading = false, selectedSport }: GamesList
   }
 
   return (
-    <div className="space-y-4 p-4">
+    <div 
+      className="space-y-4 p-4"
+      role="tabpanel" 
+      id={selectedSport ? `games-for-${selectedSport.toLowerCase()}` : 'games-panel'}
+      aria-label={`${selectedSport} games`}
+    >
       <div className="text-lg font-semibold">
         {selectedSport} Games - {games.length} match{games.length !== 1 ? 'es' : ''}
       </div>

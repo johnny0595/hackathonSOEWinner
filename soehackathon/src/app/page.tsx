@@ -70,22 +70,25 @@ export default function Home() {
             <span className="text-sm text-muted-foreground">{today}</span>
           </div>
           
-          <PredictionSidebar
-            trigger={
-              <Button variant="outline" className="relative">
-                <Trophy className="h-4 w-4 mr-2" />
-                Predictions
-                {predictionCount > 0 && (
-                  <Badge 
-                    variant="destructive" 
-                    className="absolute -top-2 -right-2 h-5 w-5 p-0 text-xs flex items-center justify-center"
-                  >
-                    {predictionCount}
-                  </Badge>
-                )}
-              </Button>
-            }
-          />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <PredictionSidebar
+              trigger={
+                <Button variant="outline" className="relative">
+                  <Trophy className="h-4 w-4 mr-2" />
+                  Predictions
+                  {predictionCount > 0 && (
+                    <Badge 
+                      variant="destructive" 
+                      className="absolute -top-2 -right-2 h-5 w-5 p-0 text-xs flex items-center justify-center"
+                    >
+                      {predictionCount}
+                    </Badge>
+                  )}
+                </Button>
+              }
+            />
+          </div>
         </div>
       </div>
 

@@ -12,10 +12,21 @@ interface GameCardProps {
   game: Game;
   prediction: Prediction | null;
   onPredict: (teamId: string) => void;
+  onRemovePrediction: () => void;
 }
 
-export function GameCard({ game, prediction, onPredict }: GameCardProps) {
+export function GameCard({ game, prediction, onPredict, onRemovePrediction }: GameCardProps) {
   const [team1, team2] = game.teams;
+  
+  const handleTeamClick = (teamId: string) => {
+    // If this team is already predicted, remove the prediction
+    if (prediction?.predictedWinnerId === teamId) {
+      onRemovePrediction();
+    } else {
+      // Otherwise, predict this team
+      onPredict(teamId);
+    }
+  };
   
   return (
     <Card className="w-full">
@@ -54,8 +65,12 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
             <Button
               variant={prediction?.predictedWinnerId === team1.id ? 'default' : 'outline'}
               size="sm"
-              onClick={() => onPredict(team1.id)}
-              aria-label={`Predict ${team1.name} to win ${game.division} game`}
+              onClick={() => handleTeamClick(team1.id)}
+              aria-label={
+                prediction?.predictedWinnerId === team1.id 
+                  ? `Remove prediction for ${team1.name}` 
+                  : `Predict ${team1.name} to win ${game.division} game`
+              }
               aria-pressed={prediction?.predictedWinnerId === team1.id}
               className={cn(
                 'w-full',
@@ -63,6 +78,7 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
                   'bg-primary text-primary-foreground'
               )}
             >
+              {prediction?.predictedWinnerId === team1.id ? '✓ ' : ''}
               Pick {team1.abbreviation || team1.name}
             </Button>
           </div>
@@ -91,8 +107,12 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
             <Button
               variant={prediction?.predictedWinnerId === team2.id ? 'default' : 'outline'}
               size="sm"
-              onClick={() => onPredict(team2.id)}
-              aria-label={`Predict ${team2.name} to win ${game.division} game`}
+              onClick={() => handleTeamClick(team2.id)}
+              aria-label={
+                prediction?.predictedWinnerId === team2.id 
+                  ? `Remove prediction for ${team2.name}` 
+                  : `Predict ${team2.name} to win ${game.division} game`
+              }
               aria-pressed={prediction?.predictedWinnerId === team2.id}
               className={cn(
                 'w-full',
@@ -100,6 +120,7 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
                   'bg-primary text-primary-foreground'
               )}
             >
+              {prediction?.predictedWinnerId === team2.id ? '✓ ' : ''}
               Pick {team2.abbreviation || team2.name}
             </Button>
           </div>
@@ -108,7 +129,10 @@ export function GameCard({ game, prediction, onPredict }: GameCardProps) {
         {prediction && (
           <div className="pt-2 border-t">
             <div className="text-xs text-center text-muted-foreground">
-              Prediction: {game.teams.find(t => t.id === prediction.predictedWinnerId)?.name}
+              ✓ Predicted: {game.teams.find(t => t.id === prediction.predictedWinnerId)?.name}
+              <div className="text-xs opacity-70 mt-1">
+                Click again to remove prediction
+              </div>
             </div>
           </div>
         )}

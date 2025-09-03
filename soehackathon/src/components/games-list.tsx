@@ -12,7 +12,7 @@ interface GamesListProps {
 }
 
 export function GamesList({ games, isLoading = false, selectedSport }: GamesListProps) {
-  const { getPredictionForGame, savePrediction } = usePredictions();
+  const { getPredictionForGame, savePrediction, removePrediction } = usePredictions();
 
   const handlePredict = (gameId: string, teamId: string) => {
     try {
@@ -26,6 +26,16 @@ export function GamesList({ games, isLoading = false, selectedSport }: GamesList
     } catch (error) {
       console.error('Failed to save prediction:', error);
       toast.error('Failed to save prediction. Please try again.');
+    }
+  };
+
+  const handleRemovePrediction = (gameId: string) => {
+    try {
+      removePrediction(gameId);
+      toast.success('Prediction removed!');
+    } catch (error) {
+      console.error('Failed to remove prediction:', error);
+      toast.error('Failed to remove prediction. Please try again.');
     }
   };
 
@@ -83,6 +93,7 @@ export function GamesList({ games, isLoading = false, selectedSport }: GamesList
             game={game}
             prediction={getPredictionForGame(game.id)}
             onPredict={(teamId) => handlePredict(game.id, teamId)}
+            onRemovePrediction={() => handleRemovePrediction(game.id)}
           />
         ))}
       </div>

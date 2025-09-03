@@ -1,4 +1,5 @@
 import { UserPredictions, Prediction } from '@/types';
+import { mockPredictions } from '@/data/mock-predictions';
 
 const STORAGE_KEY = 'ncstate-sports-predictions';
 
@@ -6,10 +7,24 @@ export class PredictionsStorage {
   static getPredictions(): UserPredictions {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : {};
+      if (stored) {
+        return JSON.parse(stored);
+      } else {
+        // Load mock predictions if no data exists
+        this.loadMockPredictions();
+        return mockPredictions;
+      }
     } catch (error) {
       console.error('Error reading predictions from storage:', error);
       return {};
+    }
+  }
+
+  static loadMockPredictions(): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(mockPredictions));
+    } catch (error) {
+      console.error('Error loading mock predictions:', error);
     }
   }
 

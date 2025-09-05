@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { LeaderboardData } from '@/types';
 import { LeaderboardCard } from './leaderboard-card';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -75,15 +76,17 @@ export function Leaderboard({ data }: LeaderboardProps) {
           </CardHeader>
           <CardContent>
             <div className="flex flex-col items-center space-y-4">
-              {/* Pack Madness Champ Image - Placeholder */}
+              {/* Pack Madness Champ Image */}
               <div className="relative">
-                <div className="w-48 h-60 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold shadow-xl">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🐺</div>
-                    <div className="text-lg font-bold">PACK</div>
-                    <div className="text-lg font-bold">MADNESS</div>
-                    <div className="text-lg font-bold">CHAMP</div>
-                  </div>
+                <div className="w-48 h-60 rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src="/images/pack-champ.png"
+                    alt="Pack Madness Champion"
+                    width={192}
+                    height={240}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
                 <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-yellow-900">
                   #1

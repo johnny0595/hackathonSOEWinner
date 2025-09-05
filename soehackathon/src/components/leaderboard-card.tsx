@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { LeaderboardEntry } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -46,14 +47,15 @@ export function LeaderboardCard({
         {/* Champion Image */}
         {showChampionImage && isChampion && (
           <div className="mb-4 text-center">
-            <div className="mx-auto w-32 h-40 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
-              {/* Placeholder for Pack Madness Champ image */}
-              <div className="text-center">
-                <div className="text-4xl mb-2">🐺</div>
-                <div className="text-xs">PACK</div>
-                <div className="text-xs">MADNESS</div>
-                <div className="text-xs">CHAMP</div>
-              </div>
+            <div className="mx-auto w-32 h-40 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/pack-champ.png"
+                alt="Pack Madness Champion"
+                width={128}
+                height={160}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             <div className="mt-2 text-xs text-muted-foreground">
               Champion gets the Pack Madness Champ shirt!

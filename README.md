@@ -15,6 +15,11 @@ A modern web application for predicting NC State sports game winners with live s
 <img width="1745" height="1034" alt="image" src="https://github.com/user-attachments/assets/008d6084-f856-4f95-95b9-98e26c586640" />
 
 
+<img width="1739" height="1036" alt="image" src="https://github.com/user-attachments/assets/e3a12148-9024-4a24-bbe4-0af8ff168ebc" />
+
+
+<img width="1737" height="1037" alt="image" src="https://github.com/user-attachments/assets/b7204b9f-afa6-404c-af21-76840baed494" />
+
 ## 🎯 Features
 
 ### Core Functionality
@@ -58,7 +63,7 @@ npm install
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to view the application.
+Visit [http://localhost:3001](http://localhost:3001) to view the application.
 
 ### Available Scripts
 

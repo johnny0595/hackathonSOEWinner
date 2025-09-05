@@ -1,0 +1,132 @@
+[
+  {
+    "id": "game-1",
+    "sportId": "basketball",
+    "division": "Men's Varsity",
+    "teams": [
+      {
+        "id": "ncsu",
+        "name": "NC State Wolfpack",
+        "abbreviation": "NCSU",
+        "winPercentage": 0.72,
+        "wins": 18,
+        "losses": 7
+      },
+      {
+        "id": "unc",
+        "name": "UNC Tar Heels",
+        "abbreviation": "UNC",
+        "winPercentage": 0.68,
+        "wins": 17,
+        "losses": 8
+      }
+    ],
+    "scheduledTime": "2025-09-05T19:00:00Z",
+    "venue": "PNC Arena",
+    "status": "scheduled"
+  },
+  {
+    "id": "game-2",
+    "sportId": "basketball",
+    "division": "Women's Varsity",
+    "teams": [
+      {
+        "id": "ncsu-w",
+        "name": "NC State Wolfpack",
+        "abbreviation": "NCSU",
+        "winPercentage": 0.81,
+        "wins": 21,
+        "losses": 5
+      },
+      {
+        "id": "duke-w",
+        "name": "Duke Blue Devils",
+        "abbreviation": "DUKE",
+        "winPercentage": 0.75,
+        "wins": 18,
+        "losses": 6
+      }
+    ],
+    "scheduledTime": "2025-09-05T17:00:00Z",
+    "venue": "Reynolds Coliseum",
+    "status": "scheduled"
+  },
+  {
+    "id": "game-3",
+    "sportId": "soccer",
+    "division": "Men's Varsity",
+    "teams": [
+      {
+        "id": "ncsu-soccer",
+        "name": "NC State Wolfpack",
+        "abbreviation": "NCSU",
+        "winPercentage": 0.65,
+        "wins": 13,
+        "losses": 7
+      },
+      {
+        "id": "wake-forest",
+        "name": "Wake Forest Demon Deacons",
+        "abbreviation": "WF",
+        "winPercentage": 0.60,
+        "wins": 12,
+        "losses": 8
+      }
+    ],
+    "scheduledTime": "2025-09-05T15:00:00Z",
+    "venue": "Dail Soccer Field",
+    "status": "scheduled"
+  },
+  {
+    "id": "game-4",
+    "sportId": "volleyball",
+    "division": "Women's Varsity",
+    "teams": [
+      {
+        "id": "ncsu-vball",
+        "name": "NC State Wolfpack",
+        "abbreviation": "NCSU",
+        "winPercentage": 0.78,
+        "wins": 25,
+        "losses": 7
+      },
+      {
+        "id": "virginia-tech",
+        "name": "Virginia Tech Hokies",
+        "abbreviation": "VT",
+        "winPercentage": 0.69,
+        "wins": 22,
+        "losses": 10
+      }
+    ],
+    "scheduledTime": "2025-09-05T18:30:00Z",
+    "venue": "Reynolds Coliseum",
+    "status": "scheduled"
+  },
+  {
+    "id": "game-5",
+    "sportId": "football",
+    "division": "Men's Varsity",
+    "teams": [
+      {
+        "id": "ncsu-football",
+        "name": "NC State Wolfpack",
+        "abbreviation": "NCSU",
+        "winPercentage": 0.58,
+        "wins": 7,
+        "losses": 5
+      },
+      {
+        "id": "clemson",
+        "name": "Clemson Tigers",
+        "abbreviation": "CLEM",
+        "winPercentage": 0.83,
+        "wins": 10,
+        "losses": 2
+      }
+    ],
+    "scheduledTime": "2025-09-05T20:00:00Z",
+    "venue": "Carter-Finley Stadium",
+    "status": "scheduled"
+  }
+]

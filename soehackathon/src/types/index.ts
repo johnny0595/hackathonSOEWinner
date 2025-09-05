@@ -40,3 +40,19 @@ export interface DataProvider {
   getGamesForSportAndDate(sportId: string, date: string): Promise<Game[]>;
   getGameById(gameId: string): Promise<Game>;
 }
+
+export interface LeaderboardEntry {
+  id: string;
+  name: string;
+  correctPredictions: number;
+  totalPredictions: number;
+  accuracy: number;
+  avatar?: string;
+  isCurrentUser?: boolean;
+}
+
+export interface LeaderboardData {
+  entries: LeaderboardEntry[];
+  champion?: LeaderboardEntry;
+  lastUpdated: string;
+}

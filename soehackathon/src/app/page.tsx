@@ -12,7 +12,8 @@ import { SubmitButton } from '@/components/submit-button';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Trophy, Calendar } from 'lucide-react';
+import { Trophy, Calendar, Award } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const [selectedSport, setSelectedSport] = useState<Sport | null>(null);
@@ -72,6 +73,12 @@ export default function Home() {
           
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/leaderboard" className="flex items-center gap-2">
+                <Award className="h-4 w-4" />
+                <span className="hidden sm:inline">Leaderboard</span>
+              </Link>
+            </Button>
             <PredictionSidebar
               trigger={
                 <Button variant="outline" className="relative">
